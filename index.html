@@ -1,639 +1,693 @@
+<html lang="en">
 
-    
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <title>CV Manfred Export</title>
-    <style>
-      /* css vars */
-      :root {
-        /* spacing */
-        --spacing_base: 4px;
-        --spacing_2: calc(var(--spacing_base) / 2);
-        --spacing_8: calc(var(--spacing_base) * 2);
-        --spacing_12: calc(var(--spacing_base) * 3);
-        --spacing_16: calc(var(--spacing_base) * 4);
-        --spacing_24: calc(var(--spacing_base) * 6);
-        --spacing_32: calc(var(--spacing_base) * 8);
-        --spacing_48: calc(var(--spacing_base) * 12);
-        --spacing_64: calc(var(--spacing_base) * 16);
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <title>CV Manfred Export</title>
+  <style>
+    /* css vars */
+    :root {
+      /* spacing */
+      --spacing_base: 4px;
+      --spacing_2: calc(var(--spacing_base) / 2);
+      --spacing_8: calc(var(--spacing_base) * 2);
+      --spacing_12: calc(var(--spacing_base) * 3);
+      --spacing_16: calc(var(--spacing_base) * 4);
+      --spacing_24: calc(var(--spacing_base) * 6);
+      --spacing_32: calc(var(--spacing_base) * 8);
+      --spacing_48: calc(var(--spacing_base) * 12);
+      --spacing_64: calc(var(--spacing_base) * 16);
 
-        /* colors */
-        --primary_color: #247A7E; /* only this color can be changed  */
-        --white_color: #f4f2f1;
-        --black_color: #0d1418;
-        --gray_color_600: #c6c3be;
-        --gray_color_800: #787673;
-        --gray_color_900: #5c5a58;
-      }
-      /* General styles */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html {
-        font-family: Roboto, sans-serif;
-        font-size: 16px;
-        color: var(--black_color);
-        font-style: normal;
-        background-color: var(--white_color);
-      }
+      /* colors */
+      --primary_color: #247A7E;
+      /* only this color can be changed  */
+      --white_color: #f4f2f1;
+      --black_color: #0d1418;
+      --gray_color_600: #c6c3be;
+      --gray_color_800: #787673;
+      --gray_color_900: #5c5a58;
+    }
+
+    /* General styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-family: Roboto, sans-serif;
+      font-size: 16px;
+      color: var(--black_color);
+      font-style: normal;
+      background-color: var(--white_color);
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: var(--spacing_64) var(--spacing_16);
+    }
+
+    .container {
+      display: grid;
+      grid-template-areas:
+        "divider header"
+        "divider aside"
+        "divider main";
+      row-gap: var(--spacing_32);
+      column-gap: var(--spacing_16);
+    }
+
+    .divider {
+      min-height: 100%;
+      border: var(--spacing_base) solid var(--primary_color);
+      grid-area: divider;
+    }
+
+    .secondary-divider {
+      border: var(--spacing_2) solid var(--primary_color);
+      width: 50%;
+    }
+
+    .svg-stroke {
+      stroke: var(--gray_color_800);
+    }
+
+    .svg-fill {
+      fill: var(--gray_color_800);
+    }
+
+    @media (min-width: 728px) {
       body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        padding: var(--spacing_64) var(--spacing_16);
+        padding: var(--spacing_64);
       }
+
       .container {
-        display: grid;
+        column-gap: var(--spacing_32);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
         grid-template-areas:
-          "divider header"
-          "divider aside"
-          "divider main";
-        row-gap: var(--spacing_32);
-        column-gap: var(--spacing_16);
+          "aside divider header"
+          "aside divider main";
+        max-width: 1220px;
+        align-self: center;
       }
-      .divider {
-        min-height: 100%;
-        border: var(--spacing_base) solid var(--primary_color);
-        grid-area: divider;
-      }
-      .secondary-divider {
-        border: var(--spacing_2) solid var(--primary_color);
-        width: 50%;
-      }
-      .svg-stroke {
-        stroke: var(--gray_color_800);
-      }
-      .svg-fill {
-        fill: var(--gray_color_800);
-      }
+    }
 
-      @media (min-width: 728px) {
-        body {
-          padding: var(--spacing_64);
-        }
-        .container {
-          column-gap: var(--spacing_32);
-        }
-      }
-      @media (min-width: 1024px) {
-        .container {
-          grid-template-areas:
-            "aside divider header"
-            "aside divider main";
-          max-width: 1220px;
-          align-self: center;
-        }
-      }
-      /* header styles */
-      header {
-        grid-area: header;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--spacing_16);
-        align-self: stretch;
-      }
+    /* header styles */
+    header {
+      grid-area: header;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--spacing_16);
+      align-self: stretch;
+    }
 
+    h1 {
+      color: var(--primary_color);
+      font-family: Roboto;
+      font-size: 40px;
+      font-weight: 900;
+      letter-spacing: 4.8px;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing_8);
+    }
+
+    h1>span {
+      color: var(--gray_color_600);
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 3.6px;
+      text-transform: uppercase;
+    }
+
+    h2,
+    .job-title {
+      color: var(--gray_color_900);
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.96px;
+    }
+
+    header>p {
+      color: var(--black_color);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.6px;
+    }
+
+    header>hr {
+      border: var(--spacing_2) solid var(--primary_color);
+      width: 100%;
+    }
+
+    @media (min-width: 728px) {
       h1 {
-        color: var(--primary_color);
-        font-family: Roboto;
-        font-size: 40px;
-        font-weight: 900;
-        letter-spacing: 4.8px;
-        text-transform: uppercase;
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing_8);
+        font-size: 48px;
       }
-      h1 > span {
-        color: var(--gray_color_600);
-        font-size: 32px;
-        font-weight: 900;
-        letter-spacing: 3.6px;
-        text-transform: uppercase;
+
+      h1>span {
+        font-size: 36px;
       }
+
       h2,
       .job-title {
-        color: var(--gray_color_900);
-        font-size: 20px;
-        font-weight: 500;
-        letter-spacing: 0.96px;
-      }
-      header > p {
-        color: var(--black_color);
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 16px;
-        letter-spacing: 0.6px;
-      }
-      header > hr {
-        border: var(--spacing_2) solid var(--primary_color);
-        width: 100%;
+        font-size: 24px;
       }
 
-      @media (min-width: 728px) {
-        h1 {
-          font-size: 48px;
-        }
-        h1 > span {
-          font-size: 36px;
-        }
-        h2,
-        .job-title {
-          font-size: 24px;
-        }
-        header > p {
-          font-size: 14px;
-          line-height: 20px;
-        }
+      header>p {
+        font-size: 14px;
+        line-height: 20px;
       }
-      @media (min-width: 1024px) {
-        h1 {
-          font-size: 52px;
-        }
-        h1 > span {
-          font-size: 40px;
-        }
+    }
+
+    @media (min-width: 1024px) {
+      h1 {
+        font-size: 52px;
       }
-      /* aside styles */
-      aside {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing_32);
-        /*TODO EJS and display none*/
+
+      h1>span {
+        font-size: 40px;
       }
-      .aside__section {
-        grid-area: aside;
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing_16);
-      }
-      .aside__section__header {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing_16);
-      }
-      .aside__section__header > div {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: var(--spacing_8);
-        height: 100%;
-      }
-      .aside__section__header > div > h3 {
-        color: var(--gray_color_900);
+    }
+
+    /* aside styles */
+    aside {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing_32);
+      /*TODO EJS and display none*/
+    }
+
+    .aside__section {
+      grid-area: aside;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing_16);
+    }
+
+    .aside__section__header {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing_16);
+    }
+
+    .aside__section__header>div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: var(--spacing_8);
+      height: 100%;
+    }
+
+    .aside__section__header>div>h3 {
+      color: var(--gray_color_900);
+      font-size: 16px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .aside__section__item {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing_8);
+      padding-left: var(--spacing_32);
+    }
+
+    .aside__section__item>a {
+      color: var(--black_color);
+      font-size: 14px;
+      text-decoration: none;
+      text-transform: capitalize;
+    }
+
+    .aside__section__item>a:hover {
+      color: var(--primary_color);
+    }
+
+    .aside__section__list-items {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing_8);
+      padding-left: var(--spacing_32);
+      font-size: 12px;
+      line-height: 24px;
+    }
+
+    @media (min-width: 728px) {
+      .aside__section__item>a {
         font-size: 16px;
-        font-weight: 400;
-        text-transform: uppercase;
-      }
-      .aside__section__item {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing_8);
-        padding-left: var(--spacing_32);
-      }
-      .aside__section__item > a {
-        color: var(--black_color);
-        font-size: 14px;
-        text-decoration: none;
-        text-transform: capitalize;
-      }
-      .aside__section__item > a:hover {
-        color: var(--primary_color);
-      }
-      .aside__section__list-items {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing_8);
-        padding-left: var(--spacing_32);
-        font-size: 12px;
-        line-height: 24px;
       }
 
-      @media (min-width: 728px) {
-        .aside__section__item > a {
-          font-size: 16px;
-        }
-        .aside__section__list-items {
-          font-size: 14px;
-          line-height: 30px;
-        }
+      .aside__section__list-items {
+        font-size: 14px;
+        line-height: 30px;
       }
-      @media (min-width: 1024px) {
-        aside {
-          grid-area: aside;
-          padding: var(--spacing_64) 0;
-        }
+    }
+
+    @media (min-width: 1024px) {
+      aside {
+        grid-area: aside;
+        padding: var(--spacing_64) 0;
       }
-      /* main section styles */
+    }
+
+    /* main section styles */
+    main {
+      grid-area: main;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing_16);
+    }
+
+    .main__section {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing_16);
+    }
+
+    .main__section__header {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing_8);
+      color: var(var(--gray_color_900));
+      font-size: 20px;
+      font-weight: 500;
+      text-transform: uppercase;
+      width: max-content;
+    }
+
+    .main__section__item {
+      display: flex;
+      gap: var(--spacing_32);
+    }
+
+    .section__content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing_16);
+    }
+
+    .section__content__header {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing_8);
+    }
+
+    .section__content__header>h3 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .section__content__header>h4 {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray_color_800);
+    }
+
+    .main__section__item .date {
+      color: var(--gray_color_900);
+      font-size: 12px;
+      letter-spacing: 0.48px;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing_8);
+    }
+
+    .main__section__item>.date-desktop {
+      display: none;
+    }
+
+    .section__content>.data {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing_8);
+      font-size: 12px;
+    }
+
+    .section__content>.data b {
+      font-weight: 600;
+    }
+
+    .section__content>.data>ul {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing_12);
+      padding-left: var(--spacing_16);
+      font-weight: 300;
+    }
+
+    @media (min-width: 728px) {
       main {
-        grid-area: main;
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing_16);
-      }
-      .main__section {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing_16);
-      }
-      .main__section__header {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing_8);
-        color: var(var(--gray_color_900));
-        font-size: 20px;
-        font-weight: 500;
-        text-transform: uppercase;
-        width: max-content;
-      }
-      .main__section__item {
-        display: flex;
         gap: var(--spacing_32);
       }
-      .section__content {
+
+      .main__section__item {
+        display: grid;
+        grid-template-columns: minmax(106px, 15%) auto 1fr;
+        gap: var(--spacing_32);
+      }
+
+      .main__section__item>.date-desktop {
         display: flex;
-        flex-direction: column;
-        gap: var(--spacing_16);
+        min-width: max-content;
+        align-items: flex-end;
       }
-      .section__content__header {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing_8);
+
+      .section__content__header>h3 {
+        font-size: 24px;
       }
-      .section__content__header > h3 {
-        font-size: 20px;
-        font-weight: 600;
+
+      .section__content__header>h4 {
+        font-size: 16px;
       }
-      .section__content__header > h4 {
-        font-size: 14px;
-        font-weight: 500;
-        color: var(--gray_color_800);
-      }
-      .main__section__item .date {
-        color: var(--gray_color_900);
-        font-size: 12px;
-        letter-spacing: 0.48px;
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing_8);
-      }
-      .main__section__item > .date-desktop {
+
+      .section__content>.date-mobile {
         display: none;
       }
-      .section__content > .data {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing_8);
-        font-size: 12px;
+
+      .section__content>.data {
+        grid-area: date;
+        font-size: 14px;
+        line-height: 18px;
       }
-      .section__content > .data b {
-        font-weight: 600;
-      }
-      .section__content > .data > ul {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing_12);
-        padding-left: var(--spacing_16);
-        font-weight: 300;
-      }
-      @media (min-width: 728px) {
-        main {
-          gap: var(--spacing_32);
-        }
-        .main__section__item {
-          display: grid;
-          grid-template-columns: minmax(106px, 15%) auto 1fr;
-          gap: var(--spacing_32);
-        }
-        .main__section__item > .date-desktop {
-          display: flex;
-          min-width: max-content;
-          align-items: flex-end;
-        }
-        .section__content__header > h3 {
-          font-size: 24px;
-        }
-        .section__content__header > h4 {
-          font-size: 16px;
-        }
-        .section__content > .date-mobile {
-          display: none;
-        }
-        .section__content > .data {
-          grid-area: date;
-          font-size: 14px;
-          line-height: 18px;
-        }
-      }
-      .line-icon {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 100%;
-      }
-      .line-icon > .circle {
-        flex-shrink: 0;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        border: 2px solid var(--primary_color);
-      }
-      .line-icon > .line {
-        flex-shrink: 1;
-        flex-grow: 1;
-        flex-basis: 100%;
-        border: 0px;
-        border-left: 2px solid var(--primary_color);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <hr class="divider" />
+    }
+
+    .line-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+    }
+
+    .line-icon>.circle {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid var(--primary_color);
+    }
+
+    .line-icon>.line {
+      flex-shrink: 1;
+      flex-grow: 1;
+      flex-basis: 100%;
+      border: 0px;
+      border-left: 2px solid var(--primary_color);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <hr class="divider" />
 
 
-      <header>
-
-        
-    <h1>Pablo <br /><span>Núñez </span></h1>
-    <hr />
-    <p class="job-title">Frontend Developer | React &amp; Javascript ⚛️</p>
-    <p>Ansiosa por iniciar una carrera como Desarrollador Junior en React. Emocionado por aplicar mi experiencia teórica y práctica en proyectos del mundo real y contribuir a un equipo dedicado a crear soluciones innovadoras.
-
-Mi impulso, me hace sentir seguro de mi potencial para convertirme rápidamente en un recurso valioso para la empresa. Aquí tienes vistazo a mis habilidades y experiencia:
-
-- JavaScript y React, con dominio de los principios modernos de desarrollo web.
-- Experiencia práctica con HTML, CSS y Git, lo que me permite colaborar de manera eficaz en proyectos y mantener la integridad del código.
-- Habilidad para trabajar de manera independiente y colaborativa en un equipo, fomentando una comunicación efectiva y con sinergia.
-- Sin miedo a resolver problemas en cada aspecto del desarrollo.
-- Prospero en los desafíos y estoy constantemente en busca de oportunidades de crecimiento.
-Estoy seguro de que poseo las habilidades y la experiencia necesarias para sobresalir en este rol, y espero la posibilidad de contribuir al éxito de su equipo.
+    <header>
 
 
-I am an enthusiastic and highly motivated individual, eager to embark on a career as a Junior React Developer. My unwavering passion for web development has led me to complete numerous courses and personal projects, honing my knowledge and skills in this dynamic field. Now, I am excited to apply my theoretical expertise and practical experience to real-world projects and contribute to a team dedicated to crafting innovative solutions.
+      <h1>Pablo <br /><span>Núñez </span></h1>
+      <hr />
+      <p class="job-title">Frontend Developer | React &amp; Javascript ⚛️</p>
+      <p>Ansiosa por iniciar una carrera como Desarrollador Junior en React. Emocionado por aplicar mi experiencia
+        teórica y práctica en proyectos del mundo real y contribuir a un equipo dedicado a crear soluciones innovadoras.
 
-My drive, coupled with my rapid learning ability, makes me confident in my potential to swiftly become a valuable asset to your company. Here&#39;s a glimpse of my skills and experience:
+        Mi impulso, me hace sentir seguro de mi potencial para convertirme rápidamente en un recurso valioso para la
+        empresa. Aquí tienes vistazo a mis habilidades y experiencia:
 
-Proficiency in JavaScript and React, with a strong grasp of modern web development principles.
-Hands-on experience with HTML, CSS, and Git, enabling me to collaborate seamlessly on projects and maintain code integrity.
-Adept at working both independently and collaboratively within a team, fostering effective communication and synergy.
-Exceptional problem-solving and debugging skills, with meticulous attention to detail in every aspect of development.
-I thrive on challenges and am constantly seeking opportunities for growth. I am steadfast in my belief that I possess the skills and experience necessary to excel in this role, and I look forward to the prospect of contributing to your team&#39;s success.</p>
+        - JavaScript y React, con dominio de los principios modernos de desarrollo web.
+        - Experiencia práctica con HTML, CSS y Git, lo que me permite colaborar de manera eficaz en proyectos y mantener
+        la integridad del código.
+        - Habilidad para trabajar de manera independiente y colaborativa en un equipo, fomentando una comunicación
+        efectiva y con sinergia.
+        - Sin miedo a resolver problemas en cada aspecto del desarrollo.
+        - Prospero en los desafíos y estoy constantemente en busca de oportunidades de crecimiento.
+        Estoy seguro de que poseo las habilidades y la experiencia necesarias para sobresalir en este rol, y espero la
+        posibilidad de contribuir al éxito de su equipo.
+
+
+      <p>I am an enthusiastic and highly motivated individual, eager to embark on a career as a Junior React Developer.
+        My unwavering passion for web development has led me to complete numerous courses and personal projects, honing
+        my knowledge and skills in this dynamic field. Now, I am excited to apply my theoretical expertise and practical
+        experience to real-world projects and contribute to a team dedicated to crafting innovative solutions.
+
+        My drive, coupled with my rapid learning ability, makes me confident in my potential to swiftly become a
+        valuable asset to your company. Here&#39;s a glimpse of my skills and experience:
+
+        Proficiency in JavaScript and React, with a strong grasp of modern web development principles.
+        Hands-on experience with HTML, CSS, and Git, enabling me to collaborate seamlessly on projects and maintain code
+        integrity.
+        Adept at working both independently and collaboratively within a team, fostering effective communication and
+        synergy.
+        Exceptional problem-solving and debugging skills, with meticulous attention to detail in every aspect of
+        development.
+        I thrive on challenges and am constantly seeking opportunities for growth. I am steadfast in my belief that I
+        possess the skills and experience necessary to excel in this role, and I look forward to the prospect of
+        contributing to your team&#39;s success.</p>
 
 
 
-      </header>
+    </header>
 
-      <aside>
-
-        
-          <div class="aside__section">
-    <div class="aside__section__header">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="21"
-        height="33"
-        viewBox="0 0 21 33"
-        fill="none"
-        class="svg-stroke"
-      >
-        <path
-          d="M19.6061 22.939C18.4811 24.2172 17.0964 25.2407 15.5444 25.9412C13.9924 26.6417 12.3088 27.003 10.6061 27.001M10.6061 27.001C8.90332 27.003 7.21973 26.6417 5.66772 25.9412C4.11571 25.2407 2.73101 24.2172 1.60608 22.939M10.6061 27.001V31.501M7.60608 31.501H13.6061M10.6061 1.50098C13.9198 1.50098 16.6061 4.18727 16.6061 7.50098V15.001C16.6061 18.3147 13.9198 21.001 10.6061 21.001C7.29237 21.001 4.60608 18.3147 4.60608 15.001V7.50098C4.60608 4.18727 7.29237 1.50098 10.6061 1.50098Z"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-      <div>
-        <h3>LENGUAJE / NIVEL</h3>
-        <hr class="secondary-divider" />
-      </div>
-    </div>
-    <ul class="aside__section__list-items">
-        <li>Inglés (Habilidad profesional completo)</li>
-        <li>Español (Habilidad nativo o bilingüe)</li>
-    </ul>
-  </div>
+    <aside>
 
 
-            <div class="aside__section">
-      <div class="aside__section__header">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="21"
-          height="33"
-          viewBox="0 0 21 33"
-          fill="none"
-          class="svg-stroke"
-        >
-          <path
-            d="M19.6061 22.939C18.4811 24.2172 17.0964 25.2407 15.5444 25.9412C13.9924 26.6417 12.3088 27.003 10.6061 27.001M10.6061 27.001C8.90332 27.003 7.21973 26.6417 5.66772 25.9412C4.11571 25.2407 2.73101 24.2172 1.60608 22.939M10.6061 27.001V31.501M7.60608 31.501H13.6061M10.6061 1.50098C13.9198 1.50098 16.6061 4.18727 16.6061 7.50098V15.001C16.6061 18.3147 13.9198 21.001 10.6061 21.001C7.29237 21.001 4.60608 18.3147 4.60608 15.001V7.50098C4.60608 4.18727 7.29237 1.50098 10.6061 1.50098Z"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-        <div>
-          <h3>HARD SKILLS</h3>
-          <hr class="secondary-divider" />
+      <div class="aside__section">
+        <div class="aside__section__header">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="33" viewBox="0 0 21 33" fill="none"
+            class="svg-stroke">
+            <path
+              d="M19.6061 22.939C18.4811 24.2172 17.0964 25.2407 15.5444 25.9412C13.9924 26.6417 12.3088 27.003 10.6061 27.001M10.6061 27.001C8.90332 27.003 7.21973 26.6417 5.66772 25.9412C4.11571 25.2407 2.73101 24.2172 1.60608 22.939M10.6061 27.001V31.501M7.60608 31.501H13.6061M10.6061 1.50098C13.9198 1.50098 16.6061 4.18727 16.6061 7.50098V15.001C16.6061 18.3147 13.9198 21.001 10.6061 21.001C7.29237 21.001 4.60608 18.3147 4.60608 15.001V7.50098C4.60608 4.18727 7.29237 1.50098 10.6061 1.50098Z"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <div>
+            <h3>LENGUAJE / NIVEL</h3>
+            <hr class="secondary-divider" />
+          </div>
         </div>
+        <ul class="aside__section__list-items">
+          <li>Inglés (Habilidad profesional completo)</li>
+          <li>Español (Habilidad nativo o bilingüe)</li>
+        </ul>
       </div>
-      <ul class="aside__section__list-items">
+
+
+      <div class="aside__section">
+        <div class="aside__section__header">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="33" viewBox="0 0 21 33" fill="none"
+            class="svg-stroke">
+            <path
+              d="M19.6061 22.939C18.4811 24.2172 17.0964 25.2407 15.5444 25.9412C13.9924 26.6417 12.3088 27.003 10.6061 27.001M10.6061 27.001C8.90332 27.003 7.21973 26.6417 5.66772 25.9412C4.11571 25.2407 2.73101 24.2172 1.60608 22.939M10.6061 27.001V31.501M7.60608 31.501H13.6061M10.6061 1.50098C13.9198 1.50098 16.6061 4.18727 16.6061 7.50098V15.001C16.6061 18.3147 13.9198 21.001 10.6061 21.001C7.29237 21.001 4.60608 18.3147 4.60608 15.001V7.50098C4.60608 4.18727 7.29237 1.50098 10.6061 1.50098Z"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <div>
+            <h3>HARD SKILLS</h3>
+            <hr class="secondary-divider" />
+          </div>
+        </div>
+        <ul class="aside__section__list-items">
           <li>Docker</li>
           <li>JavaScript</li>
           <li>NodeJS</li>
           <li>React</li>
           <li>TypeScript</li>
-      </ul>
-    </div>
+        </ul>
+      </div>
 
-          
-      </aside>
 
-      <main>
+    </aside>
 
-          <section class="main__section">
-    <div class="main__section__header">
-      <h2>Experiencia / carrera</h2>
-      <hr class="secondary-divider" />
-    </div>
-      <div class="main__section__item">
-        <div class="date date-desktop">
-          <p>Inicio: <b>2023-06-01</b></p>
+    <main>
+
+      <section class="main__section">
+        <div class="main__section__header">
+          <h2>Experiencia / carrera</h2>
+          <hr class="secondary-divider" />
         </div>
-        <div class="line-icon">
-          <div class="circle"></div>
-          <hr class="line" />
-        </div>
-        <div class="section__content">
-          <div class="section__content__header">
-            <h3>Pablo Núñez Fernández</h3>
-          </div>
-          <div class="date date-mobile">
+        <div class="main__section__item">
+          <div class="date date-desktop">
             <p>Inicio: <b>2023-06-01</b></p>
           </div>
-          <div class="data">
-            <p>Roles dentro de la empresa: <b>Freelance</b></p>
+          <div class="line-icon">
+            <div class="circle"></div>
+            <hr class="line" />
+          </div>
+          <div class="section__content">
+            <div class="section__content__header">
+              <h3>Pablo Núñez Fernández</h3>
+            </div>
+            <div class="date date-mobile">
+              <p>Inicio: <b>2023-06-01</b></p>
+            </div>
+            <div class="data">
+              <p>Roles dentro de la empresa: <b>Freelance</b></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="main__section__item">
-        <div class="date date-desktop">
-          <p>Inicio: <b>2022-06-01</b></p>
-            <p>Fin: <b>2023-03-31</b></p>
-        </div>
-        <div class="line-icon">
-          <div class="circle"></div>
-          <hr class="line" />
-        </div>
-        <div class="section__content">
-          <div class="section__content__header">
-            <h3>iSmash</h3>
-          </div>
-          <div class="date date-mobile">
+        <div class="main__section__item">
+          <div class="date date-desktop">
             <p>Inicio: <b>2022-06-01</b></p>
+            <p>Fin: <b>2023-03-31</b></p>
+          </div>
+          <div class="line-icon">
+            <div class="circle"></div>
+            <hr class="line" />
+          </div>
+          <div class="section__content">
+            <div class="section__content__header">
+              <h3>iSmash</h3>
+            </div>
+            <div class="date date-mobile">
+              <p>Inicio: <b>2022-06-01</b></p>
               <p>Fin: <b>2023-03-31</b></p>
-          </div>
-          <div class="data">
-            <p>Roles dentro de la empresa: <b>Advance technician</b></p>
+            </div>
+            <div class="data">
+              <p>Roles dentro de la empresa: <b>Advance technician</b></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="main__section__item">
-        <div class="date date-desktop">
-          <p>Inicio: <b>2022-01-01</b></p>
-            <p>Fin: <b>2022-06-30</b></p>
-        </div>
-        <div class="line-icon">
-          <div class="circle"></div>
-          <hr class="line" />
-        </div>
-        <div class="section__content">
-          <div class="section__content__header">
-            <h3>iSmash</h3>
-          </div>
-          <div class="date date-mobile">
+        <div class="main__section__item">
+          <div class="date date-desktop">
             <p>Inicio: <b>2022-01-01</b></p>
+            <p>Fin: <b>2022-06-30</b></p>
+          </div>
+          <div class="line-icon">
+            <div class="circle"></div>
+            <hr class="line" />
+          </div>
+          <div class="section__content">
+            <div class="section__content__header">
+              <h3>iSmash</h3>
+            </div>
+            <div class="date date-mobile">
+              <p>Inicio: <b>2022-01-01</b></p>
               <p>Fin: <b>2022-06-30</b></p>
-          </div>
-          <div class="data">
-            <p>Roles dentro de la empresa: <b>Technician</b></p>
+            </div>
+            <div class="data">
+              <p>Roles dentro de la empresa: <b>Technician</b></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="main__section__item">
-        <div class="date date-desktop">
-          <p>Inicio: <b>2020-07-01</b></p>
-            <p>Fin: <b>2021-09-30</b></p>
-        </div>
-        <div class="line-icon">
-          <div class="circle"></div>
-          <hr class="line" />
-        </div>
-        <div class="section__content">
-          <div class="section__content__header">
-            <h3>Mac To Life</h3>
-          </div>
-          <div class="date date-mobile">
+        <div class="main__section__item">
+          <div class="date date-desktop">
             <p>Inicio: <b>2020-07-01</b></p>
-              <p>Fin: <b>2021-09-30</b></p>
-          </div>
-          <div class="data">
-            <p>Roles dentro de la empresa: <b>Senior Information Technology Technician</b></p>
-              <p>Retos:</p>
-                <ul>
-                    <li>- Responsible for technical and software inspections,troubleshooting and repairing of Apple devices on a high scale from contractors, such as MacBook,MacBook Pro,Apple Watch,iPhone,iPad and Beats line products and Also all kinds of Apple Accessories.
-- Responsible also for Walk-in customers requiring same day iOS device hardware and Software repairs. - Ensured for updating logs and updating rest of the team for the condition of every device.
-- Support rest of the Workshop team with sharing technical and software knowledge about all the products and giving training on new comers in the iOS workshop.
-- Ensure that all productivity targets are adhered to consistently and Ensure that key tasks are completed in timely manner.</li>
-                </ul>
-          </div>
-        </div>
-      </div>
-      <div class="main__section__item">
-        <div class="date date-desktop">
-          <p>Inicio: <b>2018-02-01</b></p>
             <p>Fin: <b>2021-09-30</b></p>
-        </div>
-        <div class="line-icon">
-          <div class="circle"></div>
-          <hr class="line" />
-        </div>
-        <div class="section__content">
-          <div class="section__content__header">
-            <h3>IT Pro Solutions</h3>
           </div>
-          <div class="date date-mobile">
-            <p>Inicio: <b>2018-02-01</b></p>
+          <div class="line-icon">
+            <div class="circle"></div>
+            <hr class="line" />
+          </div>
+          <div class="section__content">
+            <div class="section__content__header">
+              <h3>Mac To Life</h3>
+            </div>
+            <div class="date date-mobile">
+              <p>Inicio: <b>2020-07-01</b></p>
               <p>Fin: <b>2021-09-30</b></p>
-          </div>
-          <div class="data">
-            <p>Roles dentro de la empresa: <b>Self Employee</b></p>
+            </div>
+            <div class="data">
+              <p>Roles dentro de la empresa: <b>Senior Information Technology Technician</b></p>
+              <p>Retos:</p>
+              <ul>
+                <li>- Responsible for technical and software inspections,troubleshooting and repairing of Apple devices
+                  on a high scale from contractors, such as MacBook,MacBook Pro,Apple Watch,iPhone,iPad and Beats line
+                  products and Also all kinds of Apple Accessories.
+                  - Responsible also for Walk-in customers requiring same day iOS device hardware and Software repairs.
+                  - Ensured for updating logs and updating rest of the team for the condition of every device.
+                  - Support rest of the Workshop team with sharing technical and software knowledge about all the
+                  products and giving training on new comers in the iOS workshop.
+                  - Ensure that all productivity targets are adhered to consistently and Ensure that key tasks are
+                  completed in timely manner.</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="main__section__item">
-        <div class="date date-desktop">
-          <p>Inicio: <b>2017-06-01</b></p>
-            <p>Fin: <b>2023-06-30</b></p>
-        </div>
-        <div class="line-icon">
-          <div class="circle"></div>
-          <hr class="line" />
-        </div>
-        <div class="section__content">
-          <div class="section__content__header">
-            <h3>iDevice Lab</h3>
+        <div class="main__section__item">
+          <div class="date date-desktop">
+            <p>Inicio: <b>2018-02-01</b></p>
+            <p>Fin: <b>2021-09-30</b></p>
           </div>
-          <div class="date date-mobile">
+          <div class="line-icon">
+            <div class="circle"></div>
+            <hr class="line" />
+          </div>
+          <div class="section__content">
+            <div class="section__content__header">
+              <h3>IT Pro Solutions</h3>
+            </div>
+            <div class="date date-mobile">
+              <p>Inicio: <b>2018-02-01</b></p>
+              <p>Fin: <b>2021-09-30</b></p>
+            </div>
+            <div class="data">
+              <p>Roles dentro de la empresa: <b>Self Employee</b></p>
+            </div>
+          </div>
+        </div>
+        <div class="main__section__item">
+          <div class="date date-desktop">
             <p>Inicio: <b>2017-06-01</b></p>
+            <p>Fin: <b>2023-06-30</b></p>
+          </div>
+          <div class="line-icon">
+            <div class="circle"></div>
+            <hr class="line" />
+          </div>
+          <div class="section__content">
+            <div class="section__content__header">
+              <h3>iDevice Lab</h3>
+            </div>
+            <div class="date date-mobile">
+              <p>Inicio: <b>2017-06-01</b></p>
               <p>Fin: <b>2023-06-30</b></p>
-          </div>
-          <div class="data">
-            <p>Roles dentro de la empresa: <b>Senior IT Technician</b></p>
+            </div>
+            <div class="data">
+              <p>Roles dentro de la empresa: <b>Senior IT Technician</b></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="main__section__item">
-        <div class="date date-desktop">
-          <p>Inicio: <b>2006-10-01</b></p>
-            <p>Fin: <b>2007-06-30</b></p>
-        </div>
-        <div class="line-icon">
-          <div class="circle"></div>
-          <hr class="line" />
-        </div>
-        <div class="section__content">
-          <div class="section__content__header">
-            <h3>Speed Pc</h3>
-          </div>
-          <div class="date date-mobile">
+        <div class="main__section__item">
+          <div class="date date-desktop">
             <p>Inicio: <b>2006-10-01</b></p>
+            <p>Fin: <b>2007-06-30</b></p>
+          </div>
+          <div class="line-icon">
+            <div class="circle"></div>
+            <hr class="line" />
+          </div>
+          <div class="section__content">
+            <div class="section__content__header">
+              <h3>Speed Pc</h3>
+            </div>
+            <div class="date date-mobile">
+              <p>Inicio: <b>2006-10-01</b></p>
               <p>Fin: <b>2007-06-30</b></p>
-          </div>
-          <div class="data">
-            <p>Roles dentro de la empresa: <b>Tec Informático</b></p>
+            </div>
+            <div class="data">
+              <p>Roles dentro de la empresa: <b>Tec Informático</b></p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-            
-      </main>
 
-        </div>
-  </body>
+    </main>
+
+  </div>
+</body>
+
 </html>
-
-  
