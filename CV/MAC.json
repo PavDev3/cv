@@ -11,8 +11,8 @@
       "title": "Frontend Developer | Angular & Javascript 🅰️",
       "description": "I am an enthusiastic and highly motivated individual, eager to embark on a career as a Junior Angular Developer. My unwavering passion for web development has led me to complete numerous courses and personal projects, honing my knowledge and skills in this dynamic field. Now, I am excited to apply my theoretical expertise and practical experience to real-world projects and contribute to a team dedicated to crafting innovative solutions.\n\nMy drive, coupled with my rapid learning ability, makes me confident in my potential to swiftly become a valuable asset to your company. Here's a glimpse of my skills and experience:\n\nProficiency in JavaScript and Angular, with a strong grasp of modern web development principles.\nHands-on experience with HTML, CSS, and Git, enabling me to collaborate seamlessly on projects and maintain code integrity.\nAdept at working both independently and collaboratively within a team, fostering effective communication and synergy.\nExceptional problem-solving and debugging skills, with meticulous attention to detail in every aspect of development.\nI thrive on challenges and am constantly seeking opportunities for growth. I am steadfast in my belief that I possess the skills and experience necessary to excel in this role, and I look forward to the prospect of contributing to your team's success.",
       "avatar": {
-        "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/24/03/21/f2bd5b6b-8ee6-400b-8e41-4c906a1adced_linkedin-photo-45076.linkedin-photo-45076",
-        "alt": "24/03/21/f2bd5b6b-8ee6-400b-8e41-4c906a1adced_linkedin-photo-45076.linkedin-photo-45076"
+        "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/24/03/21/1a11f338-d840-4c23-86c9-c605334bd738_linkedin-photo-45076.linkedin-photo-45076",
+        "alt": "24/03/21/1a11f338-d840-4c23-86c9-c605334bd738_linkedin-photo-45076.linkedin-photo-45076"
       },
       "location": {
         "notes": "Autocompleted using Google Maps API (id: ChIJdbIJReHBDA0Ro3oObVI-4V4)",
@@ -33,6 +33,115 @@
       {
         "type": "other",
         "URL": "https://pavdev3.github.io/cv/"
+      }
+    ]
+  },
+  "experience": {
+    "jobs": [
+      {
+        "organization": {
+          "name": "Pablo Nuñez Fernández"
+        },
+        "roles": [
+          {
+            "name": "Freelance",
+            "startDate": "2023-06-01",
+            "challenges": [
+              {
+                "description": "Skills: JSON"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "organization": {
+          "name": "iSmash",
+          "image": {
+            "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/24/03/21/5d11a507-355e-4eab-9a7f-dd90ca48c214_linkedin-photo-45076.linkedin-photo-45076",
+            "alt": "24/03/21/5d11a507-355e-4eab-9a7f-dd90ca48c214_linkedin-photo-45076.linkedin-photo-45076"
+          }
+        },
+        "roles": [
+          {
+            "name": "Advance technician",
+            "startDate": "2022-06-01",
+            "finishDate": "2023-03-31"
+          }
+        ]
+      },
+      {
+        "organization": {
+          "name": "iSmash",
+          "image": {
+            "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/24/03/21/a804ee35-3edb-47ec-810e-b02b92ea9f54_linkedin-photo-45076.linkedin-photo-45076",
+            "alt": "24/03/21/a804ee35-3edb-47ec-810e-b02b92ea9f54_linkedin-photo-45076.linkedin-photo-45076"
+          }
+        },
+        "roles": [
+          {
+            "name": "Technician",
+            "startDate": "2022-01-01",
+            "finishDate": "2022-06-30"
+          }
+        ]
+      },
+      {
+        "organization": {
+          "name": "Mac To Life",
+          "image": {
+            "link": "https://media-asgard.s3.eu-west-1.amazonaws.com/24/03/21/767d4eba-445c-4967-a60b-3fb29a059de5_linkedin-photo-45076.linkedin-photo-45076",
+            "alt": "24/03/21/767d4eba-445c-4967-a60b-3fb29a059de5_linkedin-photo-45076.linkedin-photo-45076"
+          }
+        },
+        "roles": [
+          {
+            "name": "Senior Information Technology Technician",
+            "startDate": "2020-07-01",
+            "finishDate": "2021-09-30",
+            "challenges": [
+              {
+                "description": "- Responsible for technical and software inspections,troubleshooting and repairing of Apple devices on a high scale from contractors, such as MacBook,MacBook Pro,Apple Watch,iPhone,iPad and Beats line products and Also all kinds of Apple Accessories.\n- Responsible also for Walk-in customers requiring same day iOS device hardware and Software repairs. - Ensured for updating logs and updating rest of the team for the condition of every device.\n- Support rest of the Workshop team with sharing technical and software knowledge about all the products and giving training on new comers in the iOS workshop.\n- Ensure that all productivity targets are adhered to consistently and Ensure that key tasks are completed in timely manner."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "organization": {
+          "name": "IT Pro Solutions"
+        },
+        "roles": [
+          {
+            "name": "Self Employee",
+            "startDate": "2018-02-01",
+            "finishDate": "2021-09-30"
+          }
+        ]
+      },
+      {
+        "organization": {
+          "name": "iDevice Lab"
+        },
+        "roles": [
+          {
+            "name": "Senior IT Technician",
+            "startDate": "2017-06-01",
+            "finishDate": "2023-06-30"
+          }
+        ]
+      },
+      {
+        "organization": {
+          "name": "Speed Pc"
+        },
+        "roles": [
+          {
+            "name": "Tec Informatico",
+            "startDate": "2006-10-01",
+            "finishDate": "2007-06-30"
+          }
+        ]
       }
     ]
   },
